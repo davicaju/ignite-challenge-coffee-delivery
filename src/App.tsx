@@ -1,17 +1,24 @@
-import { CoffeeList } from "./components/CoffeeList";
-import { Header } from "./components/Header";
-import { Introduction } from "./components/Introduction";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Home } from "./pages/Home";
+
+import { Checkout } from "./pages/Checkout";
 import { GlobalStyle } from "./styles/global";
 
 export function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/checkout",
+      element: <Checkout />,
+    },
+  ]);
   return (
     <div>
-      <Header />
-      <Introduction />
-
+      <RouterProvider router={router} />
       <GlobalStyle />
-
-      <CoffeeList />
     </div>
   );
 }

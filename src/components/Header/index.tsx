@@ -4,16 +4,18 @@ export function Header() {
   return (
     <HeaderContainer>
       <div className="left-content">
-        <img src="/assets/logo.svg" alt="Coffee Delivery logo" />
+        <a href="/">
+          <img src="/assets/logo.svg" alt="Coffee Delivery logo" />
+        </a>
       </div>
 
       <RightContent>
         <p className="city">
           <img src="assets/pinIcon.svg" alt="Pin Icon" /> Fortaleza, CE
         </p>
-        <p className="shoppingCart">
+        <a className="shoppingCart" href="/checkout">
           <img src="assets/shoppingCart.svg" alt="Shopping Cart Icon" />
-        </p>
+        </a>
       </RightContent>
     </HeaderContainer>
   );
