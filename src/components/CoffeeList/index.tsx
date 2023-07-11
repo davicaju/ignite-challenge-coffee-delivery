@@ -1,392 +1,104 @@
 import { useState } from "react";
 
-import { Minus, Plus, ShoppingCartSimple } from "@phosphor-icons/react";
+import { v4 as uuidv4 } from "uuid";
 
 import { CoffeeListContainer, CoffeeItem } from "../../styles/coffee-list";
 
+import expresso from "/assets/coffeeItem.svg";
+import { Price } from "../Price";
+
+type CoffeeItem = {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+  tags: string[];
+};
+
 export function CoffeeList() {
-  const [value, setValue] = useState(0);
+  const [coffees] = useState<CoffeeItem[]>([
+    {
+      id: uuidv4(),
+      name: "Expresso Tradicional",
+      description: "O tradicional café feito com água quente e grãos moídos",
+      image: expresso,
+      price: 9.99,
+      tags: ["tradicional"],
+    },
+    {
+      id: uuidv4(),
+      name: "Expresso Tradicional",
+      description: "O tradicional café feito com água quente e grãos moídos",
+      image: expresso,
+      price: 9.9,
+      tags: ["tradicional"],
+    },
+    {
+      id: uuidv4(),
+      name: "Expresso Tradicional",
+      description: "O tradicional café feito com água quente e grãos moídos",
+      image: expresso,
+      price: 9.9,
+      tags: ["tradicional"],
+    },
+    {
+      id: uuidv4(),
+      name: "Expresso Tradicional",
+      description: "O tradicional café feito com água quente e grãos moídos",
+      image: expresso,
+      price: 9.9,
+      tags: ["tradicional"],
+    },
+    {
+      id: uuidv4(),
+      name: "Expresso Tradicional",
+      description: "O tradicional café feito com água quente e grãos moídos",
+      image: expresso,
+      price: 9.9,
+      tags: ["tradicional"],
+    },
+    {
+      id: uuidv4(),
+      name: "Expresso Tradicional",
+      description: "O tradicional café feito com água quente e grãos moídos",
+      image: expresso,
+      price: 9.9,
+      tags: ["tradicional"],
+    },
+    {
+      id: uuidv4(),
+      name: "Expresso Tradicional",
+      description: "O tradicional café feito com água quente e grãos moídos",
+      image: expresso,
+      price: 9.9,
+      tags: ["tradicional"],
+    },
+    {
+      id: uuidv4(),
+      name: "Expresso Tradicional",
+      description: "O tradicional café feito com água quente e grãos moídos",
+      image: expresso,
+      price: 9.9,
+      tags: ["tradicional"],
+    },
+  ]);
+
   return (
     <CoffeeListContainer>
       <h1>Nossos cafés</h1>
       <div className="list">
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
-        <CoffeeItem>
-          <img src="/assets/coffeeItem.svg" alt="" />
-          <p id="type">TRADICIONAL</p>
-          <p id="title">Expresso Tradicional</p>
-          <p id="description">
-            O tradicional café feito com água quente e grãos moídos
-          </p>
-          <div className="price">
-            <p>
-              R$ <span>9,90</span>
-            </p>
-
-            <div id="quantity">
-              <Minus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue - 1)}
-              />
-              <p>{value}</p>
-              <Plus
-                size={14}
-                onClick={() => setValue((oldValue) => oldValue + 1)}
-              />
-            </div>
-
-            <div id="cart">
-              <ShoppingCartSimple size={22} weight="fill" />
-            </div>
-          </div>
-        </CoffeeItem>
+        {coffees.map((coffee) => (
+          <CoffeeItem key={coffee.id}>
+            <img src={coffee.image} alt="" />
+            {coffee.tags.map((tag) => (
+              <p id="type">{tag.toUpperCase()}</p>
+            ))}
+            <p id="title">{coffee.name}</p>
+            <p id="description">{coffee.description}</p>
+            <Price price={coffee.price} />
+          </CoffeeItem>
+        ))}
       </div>
     </CoffeeListContainer>
   );

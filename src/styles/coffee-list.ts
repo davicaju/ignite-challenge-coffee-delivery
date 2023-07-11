@@ -16,7 +16,7 @@ export const CoffeeListContainer = styled.div`
 export const CoffeeItem = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 
   flex-direction: column;
 
