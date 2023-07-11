@@ -1,11 +1,6 @@
 import { useState } from "react";
 
-import {
-  Minus,
-  Plus,
-  ShoppingCart,
-  ShoppingCartSimple,
-} from "@phosphor-icons/react";
+import { Minus, Plus, ShoppingCartSimple } from "@phosphor-icons/react";
 
 import { CoffeeListContainer, CoffeeItem } from "../../styles/coffee-list";
 
