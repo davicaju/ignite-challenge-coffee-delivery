@@ -4,6 +4,13 @@ export const CoffeeListContainer = styled.div`
   h1 {
     margin-bottom: 54px;
   }
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 60px;
+  }
 `;
 
 export const CoffeeItem = styled.div`
@@ -65,5 +72,71 @@ export const CoffeeItem = styled.div`
 
   .price {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 208px;
+
+    p {
+      color: #574f4d;
+      text-align: right;
+      font-family: "Roboto";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+
+      span {
+        font-size: 20px;
+        font-weight: 900;
+      }
+    }
+
+    #quantity {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 72px;
+      height: 38px;
+      border-radius: 6px;
+      padding: 8px;
+
+      background-color: #e6e5e5;
+
+      p {
+        font-family: Roboto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        color: #272221;
+      }
+
+      svg {
+        color: #8047f8;
+        cursor: pointer;
+      }
+    }
+
+    #cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 38px;
+      height: 38px;
+
+      border-radius: 6px;
+
+      background-color: #4b2995;
+
+      cursor: pointer;
+
+      svg {
+        color: white;
+        fill: white;
+      }
+    }
   }
 `;

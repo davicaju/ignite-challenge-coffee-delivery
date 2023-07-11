@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -10,8 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 body {
   background-color: #fafafa;
 
-  width: 1120px;
+  max-width: 1120px;
   margin: 2rem auto;
 }
-`
-
+`;

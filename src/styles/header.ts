@@ -13,47 +13,38 @@ export const RightContent = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  
-
   gap: 8px;
-
 
   .city {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background-color: #EBE5F9;
+    background-color: #ebe5f9;
 
     height: 38px;
 
     border-radius: 6px;
     padding: 8px;
 
-    p {
-        font-size: 14px;
-        font-weight: 400;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: #4b2995;
+  }
 
-        gap: 4px;
-    }
-}
-
-.shoppingCart {
+  .shoppingCart {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    background-color: #F1E9C9;
-    
-    
+
+    background-color: #f1e9c9;
+
     width: 38px;
     height: 38px;
 
-    border-radius: 6px; 
+    border-radius: 6px;
   }
-
 `;
-
-
-
-
