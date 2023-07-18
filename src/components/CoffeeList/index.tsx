@@ -2,10 +2,11 @@ import { useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 
-import { CoffeeListContainer, CoffeeItem } from "../../styles/coffee-list";
+import { CoffeeListContainer } from "../../styles/coffee-list";
 
 import expresso from "/assets/coffeeItem.svg";
-import { Price } from "../Price";
+
+import { CoffeeItem } from "../CoffeeItem";
 
 type CoffeeItem = {
   id: string;
@@ -84,20 +85,14 @@ export function CoffeeList() {
     },
   ]);
 
+  console.log(coffees);
+
   return (
     <CoffeeListContainer>
       <h1>Nossos cafés</h1>
       <div className="list">
         {coffees.map((coffee) => (
-          <CoffeeItem key={coffee.id}>
-            <img src={coffee.image} alt="" />
-            {coffee.tags.map((tag) => (
-              <p id="type">{tag.toUpperCase()}</p>
-            ))}
-            <p id="title">{coffee.name}</p>
-            <p id="description">{coffee.description}</p>
-            <Price price={coffee.price} />
-          </CoffeeItem>
+          <CoffeeItem key={coffee.id} coffee={coffee} />
         ))}
       </div>
     </CoffeeListContainer>

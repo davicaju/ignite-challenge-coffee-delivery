@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { HeaderContainer, RightContent } from "../../styles/header";
 
 export function Header() {
@@ -13,6 +15,7 @@ export function Header() {
         <p className="city">
           <img src="assets/pinIcon.svg" alt="Pin Icon" /> Fortaleza, CE
         </p>
+
         <a className="shoppingCart" href="/checkout">
           <img src="assets/shoppingCart.svg" alt="Shopping Cart Icon" />
         </a>

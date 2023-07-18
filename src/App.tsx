@@ -1,8 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Home } from "./pages/Home";
 
+import { Home } from "./pages/Home";
 import { Checkout } from "./pages/Checkout";
+
+import { Header } from "./components/Header";
+
 import { GlobalStyle } from "./styles/global";
+import { Success } from "./pages/Success";
 
 export function App() {
   const router = createBrowserRouter([
@@ -14,9 +18,15 @@ export function App() {
       path: "/checkout",
       element: <Checkout />,
     },
+    {
+      path: "/success",
+      element: <Success />,
+    },
   ]);
+
   return (
     <div>
+      <Header />
       <RouterProvider router={router} />
       <GlobalStyle />
     </div>
