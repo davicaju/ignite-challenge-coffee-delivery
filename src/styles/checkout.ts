@@ -4,7 +4,7 @@ export const CheckoutContainer = styled.div`
   display: flex;
 
   h2 {
-    font-family: Baloo 2;
+    font-family: "Baloo 2";
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -45,7 +45,7 @@ export const LeftContent = styled.div`
     display: flex;
 
     .title {
-      font-family: Roboto;
+      font-family: "Roboto";
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -53,7 +53,7 @@ export const LeftContent = styled.div`
     }
 
     .sub-title {
-      font-family: Roboto;
+      font-family: "Roboto";
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
@@ -98,7 +98,7 @@ export const LeftContent = styled.div`
 
         border-radius: 6px;
 
-        font-family: Roboto;
+        font-family: "Roboto";
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
@@ -140,7 +140,7 @@ export const RightContent = styled.div`
       display: flex;
       justify-content: space-between;
 
-      font-family: Roboto;
+      font-family: "Roboto";
       font-size: 20px;
       font-style: normal;
       font-weight: 700;
@@ -154,7 +154,7 @@ export const RightContent = styled.div`
       margin-bottom: 15px;
 
       p {
-        font-family: Roboto;
+        font-family: "Roboto";
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -173,7 +173,7 @@ export const RightContent = styled.div`
 
       margin-top: 24px;
 
-      font-family: Roboto;
+      font-family: "Roboto";
       font-size: 14px;
       font-style: normal;
       font-weight: 700;

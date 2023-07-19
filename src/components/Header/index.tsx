@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import { HeaderContainer, RightContent } from "../../styles/header";
 
 export function Header() {

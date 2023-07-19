@@ -29,7 +29,7 @@ export const CoffeeContainer = styled.div`
 
     margin-bottom: 20px;
 
-    font-family: Roboto;
+    font-family: "Roboto";
     font-size: 10px;
     font-style: normal;
     font-weight: 700;
@@ -40,7 +40,7 @@ export const CoffeeContainer = styled.div`
 
   #title {
     color: #403937;
-    font-family: Baloo 2;
+    font-family: "Baloo 2";
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -92,7 +92,7 @@ export const CoffeeContainer = styled.div`
       background-color: #e6e5e5;
 
       p {
-        font-family: Roboto;
+        font-family: "Roboto";
         font-size: 16px;
         font-style: normal;
         font-weight: 400;

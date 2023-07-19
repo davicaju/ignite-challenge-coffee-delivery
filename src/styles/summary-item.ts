@@ -5,7 +5,7 @@ export const SummaryItemContainer = styled.div`
   justify-content: space-between;
 
   #price {
-    font-family: Roboto;
+    font-family: "Roboto";
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -19,7 +19,7 @@ export const SummaryItemContainer = styled.div`
     margin-left: 20px;
 
     p:first-child {
-      font-family: Roboto;
+      font-family: "Roboto";
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -46,7 +46,7 @@ export const SummaryItemContainer = styled.div`
         border-radius: 6px;
         background-color: #e6e5e5;
 
-        font-family: Roboto;
+        font-family: "Roboto";
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
@@ -69,7 +69,7 @@ export const SummaryItemContainer = styled.div`
       background-color: #e6e5e5;
 
       p {
-        font-family: Roboto;
+        font-family: "Roboto";
         font-size: 16px;
         font-style: normal;
         font-weight: 400;

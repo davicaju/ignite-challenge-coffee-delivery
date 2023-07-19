@@ -47,10 +47,9 @@ export const ItemsContent = styled.div`
   p {
     display: flex;
     align-items: center;
-    
 
     color: #574f4d;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

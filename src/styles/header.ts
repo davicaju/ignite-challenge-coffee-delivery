@@ -27,7 +27,7 @@ export const RightContent = styled.div`
     border-radius: 6px;
     padding: 8px;
 
-    font-family: Roboto;
+    font-family: "Roboto";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
