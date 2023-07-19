@@ -1,6 +1,11 @@
+import { useShopping } from "../../hooks/useShopping";
 import { HeaderContainer, RightContent } from "../../styles/header";
 
 export function Header() {
+  const { value } = useShopping();
+
+  console.log(value);
+
   return (
     <HeaderContainer>
       <div className="left-content">
