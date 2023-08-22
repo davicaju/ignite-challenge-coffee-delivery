@@ -7,7 +7,7 @@ import { Header } from "./components/Header";
 
 import { GlobalStyle } from "./styles/global";
 import { Success } from "./pages/Success";
-import { UseShoppingProvider } from "./hooks/useShopping";
+import { UseShopCartProvider } from "./hooks/useShopCart";
 
 export function App() {
   const router = createBrowserRouter([
@@ -27,11 +27,11 @@ export function App() {
 
   return (
     <div>
-      <UseShoppingProvider>
+      <UseShopCartProvider>
         <Header />
         <RouterProvider router={router} />
         <GlobalStyle />
-      </UseShoppingProvider>
+      </UseShopCartProvider>
     </div>
   );
 }
