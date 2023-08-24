@@ -1,11 +1,7 @@
-import { useShopping } from "../../hooks/useShopping";
+import { Link } from "react-router-dom";
 import { HeaderContainer, RightContent } from "../../styles/header";
 
 export function Header() {
-  const { value } = useShopping();
-
-  console.log(value);
-
   return (
     <HeaderContainer>
       <div className="left-content">
@@ -19,9 +15,11 @@ export function Header() {
           <img src="assets/pinIcon.svg" alt="Pin Icon" /> Fortaleza, CE
         </p>
 
-        <a className="shoppingCart" href="/checkout">
-          <img src="assets/shoppingCart.svg" alt="Shopping Cart Icon" />
-        </a>
+        <Link to="checkout">
+          <div className="shoppingCart">
+            <img src="assets/shoppingCart.svg" alt="Shopping Cart Icon" />
+          </div>
+        </Link>
       </RightContent>
     </HeaderContainer>
   );

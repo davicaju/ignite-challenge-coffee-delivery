@@ -1,24 +1,28 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 
 type Item = {
-  id: number;
+  id: string;
   name: string;
 };
 
-interface ItemCart extends Item {
+export interface ItemCart extends Item {
   quantity: number;
 }
 
 interface useShopCartProps {
-  value: number;
+  cartItems: ItemCart[];
+  handleAddItemInCart: (item: Item, quantity: number) => void;
+  handleIncreaseItemQuantity: (item: ItemCart) => void;
+  handleDecreaseItemQuantity: (item: ItemCart) => void;
+  handleRemoveItemFromCart: (item: ItemCart) => void;
 }
 
 const UseShopCartContext = createContext({} as useShopCartProps);
 
 export const UseShopCartProvider = ({ children }: { children: ReactNode }) => {
-  const value = 1;
-
   const [cartItems, setCartItems] = useState<ItemCart[]>([]);
+
+  console.log(cartItems);
 
   const itemExistOnCart = (item: Item) => {
     const isFound = cartItems.some((itemCart) => {
@@ -37,7 +41,7 @@ export const UseShopCartProvider = ({ children }: { children: ReactNode }) => {
     if (!isItemInCart) {
       const newItem = {
         ...item,
-        quantity: 0,
+        quantity: quantity,
       };
 
       setCartItems((oldItem) => [...oldItem, newItem]);
@@ -47,18 +51,53 @@ export const UseShopCartProvider = ({ children }: { children: ReactNode }) => {
           ? { ...item, quantity: cartItem.quantity + quantity }
           : cartItem
       );
-
       setCartItems(updateQuantityOfItemInCart);
     }
   };
 
+  const handleIncreaseItemQuantity = (item: ItemCart) => {
+    const updateNumberOfItemInCart = cartItems.map((cartItem) =>
+      cartItem.id === item.id
+        ? { ...item, quantity: cartItem.quantity + 1 }
+        : cartItem
+    );
+
+    setCartItems(updateNumberOfItemInCart);
+  };
+
+  const handleDecreaseItemQuantity = (item: ItemCart) => {
+    const updateNumberOfItemInCart = cartItems.map((cartItem) =>
+      cartItem.id === item.id
+        ? { ...item, quantity: cartItem.quantity - 1 }
+        : cartItem
+    );
+
+    setCartItems(updateNumberOfItemInCart);
+  };
+
+  const handleRemoveItemFromCart = (item: ItemCart) => {
+    const updateNumberOfItemInCart = cartItems.filter(
+      (cartItem) => cartItem.id !== item.id
+    );
+
+    setCartItems(updateNumberOfItemInCart);
+  };
+
   return (
-    <UseShopCartContext.Provider value={{ value }}>
+    <UseShopCartContext.Provider
+      value={{
+        cartItems,
+        handleAddItemInCart,
+        handleIncreaseItemQuantity,
+        handleDecreaseItemQuantity,
+        handleRemoveItemFromCart,
+      }}
+    >
       {children}
     </UseShopCartContext.Provider>
   );
 };
 
-export const useShopping = () => {
+export const useShopCart = () => {
   return useContext(UseShopCartContext);
 };

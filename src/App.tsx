@@ -13,7 +13,12 @@ export function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: (
+        <>
+          <Header />
+          <Home />
+        </>
+      ),
     },
     {
       path: "/checkout",
@@ -28,7 +33,6 @@ export function App() {
   return (
     <div>
       <UseShopCartProvider>
-        <Header />
         <RouterProvider router={router} />
         <GlobalStyle />
       </UseShopCartProvider>

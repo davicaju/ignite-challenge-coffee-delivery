@@ -1,21 +1,40 @@
 import { Minus, Plus } from "@phosphor-icons/react";
 import { SummaryItemContainer } from "../../styles/summary-item";
+import { ItemCart, useShopCart } from "../../hooks/useShopCart";
 
-export function SummaryItem() {
+interface SummaryItemProps {
+  coffee: ItemCart;
+}
+
+export function SummaryItem({ coffee }: SummaryItemProps) {
+  const {
+    handleRemoveItemFromCart,
+    handleIncreaseItemQuantity,
+    handleDecreaseItemQuantity,
+  } = useShopCart();
+
   return (
     <>
-      <SummaryItemContainer>
+      <SummaryItemContainer key={coffee.id}>
         <div style={{ display: "flex" }}>
           <img src="/assets/coffeeItem.svg" width={64} height={64} alt="" />
           <div className="coffee-data">
-            <p>Expresso Tradicional</p>
+            <p>{coffee.name}</p>
             <div className="add-remover">
               <div id="quantity">
-                <Minus size={14} />
-                <p>0</p>
-                <Plus size={14} />
+                <Minus
+                  size={14}
+                  onClick={() => handleDecreaseItemQuantity(coffee)}
+                />
+                <p>{coffee.quantity}</p>
+                <Plus
+                  size={14}
+                  onClick={() => handleIncreaseItemQuantity(coffee)}
+                />
               </div>
-              <p id="remove">REMOVER</p>
+              <p id="remove" onClick={() => handleRemoveItemFromCart(coffee)}>
+                REMOVER
+              </p>
             </div>
           </div>
         </div>
