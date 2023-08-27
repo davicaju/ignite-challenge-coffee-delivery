@@ -136,6 +136,14 @@ export const RightContent = styled.div`
     padding: 40px;
     background-color: #f3f2f2;
 
+    .cartItems {
+      overflow: auto;
+      overflow-x: hidden;
+      max-height: 200px;
+
+      margin-bottom: 40px;
+    }
+
     .total-order {
       display: flex;
       justify-content: space-between;

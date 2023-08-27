@@ -24,7 +24,7 @@ export function CoffeeList() {
       name: "Expresso Tradicional",
       description: "O tradicional café feito com água quente e grãos moídos",
       image: expresso,
-      price: 9.99,
+      price: 9.9,
       tags: ["tradicional"],
     },
     {

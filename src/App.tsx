@@ -7,13 +7,18 @@ import { Header } from "./components/Header";
 
 import { GlobalStyle } from "./styles/global";
 import { Success } from "./pages/Success";
-import { UseShoppingProvider } from "./hooks/useShopping";
+import { UseShopCartProvider } from "./hooks/useShopCart";
 
 export function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: (
+        <>
+          <Header />
+          <Home />
+        </>
+      ),
     },
     {
       path: "/checkout",
@@ -27,11 +32,10 @@ export function App() {
 
   return (
     <div>
-      <UseShoppingProvider>
-        <Header />
+      <UseShopCartProvider>
         <RouterProvider router={router} />
         <GlobalStyle />
-      </UseShoppingProvider>
+      </UseShopCartProvider>
     </div>
   );
 }

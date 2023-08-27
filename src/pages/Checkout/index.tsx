@@ -13,17 +13,18 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPinLine,
-  Minus,
   Money,
-  Plus,
 } from "@phosphor-icons/react";
 
 import { SummaryItem } from "../../components/SummaryItem";
 
 import { Link } from "react-router-dom";
+import { useShopCart } from "../../hooks/useShopCart";
 
 export function Checkout() {
   const [payMethod, setPayMethod] = useState<"" | "cred" | "deb" | "money">("");
+
+  const { cartItems } = useShopCart();
 
   return (
     <CheckoutContainer>
@@ -120,8 +121,12 @@ export function Checkout() {
       <RightContent>
         <h2>Cafés selecionados</h2>
         <div className="summary">
-          <SummaryItem />
-          <SummaryItem />
+          <div className="cartItems">
+            {cartItems.map((cartItem) => (
+              <SummaryItem coffee={cartItem} />
+            ))}
+          </div>
+
           <div className="summary-order">
             <div className="order">
               <p>Total de itens</p>
