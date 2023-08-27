@@ -25,7 +25,10 @@ export function CoffeeItem({ coffee }: CoffeeItemProps) {
 
   const handleAddCoffeeInCart = useCallback(() => {
     console.log(quantity);
-    handleAddItemInCart({ id: coffee.id, name: coffee.name }, quantity);
+    handleAddItemInCart(
+      { id: coffee.id, name: coffee.name, price: coffee.price },
+      quantity
+    );
 
     console.log(quantity);
 

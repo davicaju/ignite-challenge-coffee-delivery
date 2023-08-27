@@ -1,8 +1,15 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 type Item = {
   id: string;
   name: string;
+  price: number;
 };
 
 export interface ItemCart extends Item {
@@ -21,6 +28,7 @@ const UseShopCartContext = createContext({} as useShopCartProps);
 
 export const UseShopCartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<ItemCart[]>([]);
+  const [total, setTotal] = useState(0);
 
   console.log(cartItems);
 
@@ -37,6 +45,8 @@ export const UseShopCartProvider = ({ children }: { children: ReactNode }) => {
 
   const handleAddItemInCart = (item: Item, quantity: number) => {
     const isItemInCart = itemExistOnCart(item);
+
+    console.log(isItemInCart);
 
     if (!isItemInCart) {
       const newItem = {
@@ -82,6 +92,12 @@ export const UseShopCartProvider = ({ children }: { children: ReactNode }) => {
 
     setCartItems(updateNumberOfItemInCart);
   };
+
+  useEffect(() => {
+    const total = cartItems.map((item) => item.quantity * item.price);
+
+    console.log(total);
+  }, [cartItems]);
 
   return (
     <UseShopCartContext.Provider
